@@ -151,4 +151,11 @@ footer {
     margin-top: 2rem;
 }
 /* Light and Dark Mode */
+<!--Light mode -->
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+<!--Dark mode -->
 
