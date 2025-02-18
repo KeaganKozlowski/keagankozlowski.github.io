@@ -1,0 +1,102 @@
+/*All measurements will be in rem to suit all screen sizes*/
+
+body {
+    background-color: #333333; /*This colour is called Pebble grey*/
+    color: whitesmoke;
+    display : flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin : 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0rem;
+    margin: 0rem;
+    display: flex;
+    gap: 2rem; /*Spacing between links*/
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: medium;
+    display: flex;
+    align-items: center;
+    transition: color 0.25s ease;
+}
+
+nav ul li a:hover {
+    color: #f0e9d6; /*Creamy white*/
+    text-decoration: underline;
+}
+
+nav ul li a i {
+    margin-left: 0.5rem;
+    font-size: 1.0rem;
+}
+
+#DarkLight {
+    cursor: pointer;
+}
+
+body.light-mode {
+    background-color: aliceblue;
+    color: black;
+}
+
+body.light-mode nav ul li a { /*Overwriting but is currently being stored as the color*/
+    color: black;
+}
+
+body.light-mode nav ul li a:hover {
+    color : #808080;
+}
+
+main {
+    flex : 1;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    text-align: center;
+    border: 2px solid whitesmoke;
+    padding: 1rem;
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    margin-bottom: 2rem;
+}
+
+body.light-mode .content-section.active{
+    border: 1px solid black;
+}
+
+footer {
+    background-color: #333333;
+    color: whitesmoke;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    height: 3rem; /* Set a normal height for the footer */
+}
+
+body.light-mode footer{
+    background-color: aliceblue;
+    color: black;
+}
