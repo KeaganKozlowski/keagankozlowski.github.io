@@ -2,7 +2,7 @@ title: "Keagan Kozlowski's Github Page"
 description: "Showcasing development projects and journey as a Computer Science student."
 lsi: false
 safe: true
-source: [your repo's top level directory]
+source: Src\Main Page\index.html
 incremental: false
 highlighter: rouge
 gist:
