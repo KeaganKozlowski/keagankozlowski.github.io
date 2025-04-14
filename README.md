@@ -6,3 +6,6 @@ My current plan for the website is to:
 2. Introduce React elements
 3. Implement mini game
 4. Make look nice
+
+## Broken
+I have currently broken my whole website due to an error in my yaml file.
