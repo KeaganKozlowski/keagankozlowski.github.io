@@ -42,3 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById('yes').addEventListener('click', function() {
+    console.log("yes pressed");
+    window.location.href = "../Main Page/game.html";
+});
+
+document.getElementById('no').addEventListener('click', function() {
+    console.log("no pressed");
+    window.location.href = "../Main Page/index.html";
+});
