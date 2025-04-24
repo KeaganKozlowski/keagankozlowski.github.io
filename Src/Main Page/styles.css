@@ -9,6 +9,10 @@ body {
     margin : 0;
 }
 
+body.game {
+    align-items: center;
+}
+
 header {
     display: flex;
     justify-content: center;
@@ -109,7 +113,15 @@ button {
 }
 
 .Card {
+
+}
+
+.MainGame {
     
+}
+
+#Buttons {
+    flex-direction: column;
 }
 
 footer {
