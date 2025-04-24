@@ -41,8 +41,30 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
+    if (document.title === "Are you bored?"){
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
 
+        if (yesButton) {
+            yesButton.addEventListener('click', function () {
+                console.log("yes pressed");
+                window.location.href = "/Src/Main Page/game.html";
+            });
+        } else {
+            console.error('Element with ID "yes" not found.');
+        }
+
+        if (noButton) {
+            noButton.addEventListener('click', function () {
+                console.log("no pressed");
+                window.location.href = "/index.html";
+            });
+        } else {
+            console.error('Element with ID "no" not found.');
+        }
+    }
+});
+/*
 document.getElementById('yes').addEventListener('click', function() {
     console.log("yes pressed");
     window.location.href = "/Src/Main Page/game.html";
@@ -51,4 +73,4 @@ document.getElementById('yes').addEventListener('click', function() {
 document.getElementById('no').addEventListener('click', function() {
     console.log("no pressed");
     window.location.href = "/index.html";
-});
+});*/

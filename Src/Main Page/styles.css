@@ -95,6 +95,23 @@ body.light-mode .content-section.active{
     border: 1px solid black;
 }
 
+#Text {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+button {
+
+}
+
+.Game {
+
+}
+
+.Card {
+    
+}
+
 footer {
     background-color: #333333;
     color: whitesmoke;
