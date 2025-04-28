@@ -139,6 +139,48 @@ button {
     transition: background-color 0.3s ease;
 }
 
+#Currrency {
+    font-family: 'Helvetica Neue', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Adding animation for when currency amount increases*/
+#currency-amount {
+    transition: color 0.3s ease;
+    font-weight: 500;
+    color: whitesmoke;
+}
+
+#currency-amount.up {
+    color: green;
+    animation: pulse 0.5s;
+}
+
+#currency-amount.down {
+    color: red;
+    animation: shake 0.5s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+@keyframes shake {
+    0%, 100% {transform: translateX(0);}
+    25% {transform: translateX(-5px)}
+    75% {transform: translateX(5px);}
+}
+
+#currency-name {
+    font-size: 0.8em;
+    color: whitesmoke;
+    margin-left: 2px;
+}
+
 footer {
     background-color: #333333;
     color: whitesmoke;
