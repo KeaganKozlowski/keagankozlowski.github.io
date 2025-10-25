@@ -1,53 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KKozlowski</title>
-    <link rel = "stylesheet" href = "./Src/Main Page/styles.css">
+    <title>Keagan Kozlowski | Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src = "./Src/Main Page/script.js"></script>
+    <!-- Setup Tailwind & Inter Font -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // 'class' enables manual dark mode toggling
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-green': 'pulse-green 0.5s',
+                        'shake-red': 'shake-red 0.5s',
+                    },
+                    keyframes: {
+                        'pulse-green': {
+                            '0%, 100%': { transform: 'scale(1)', color: 'inherit' },
+                            '50%': { transform: 'scale(1.2)', color: '#22c55e' }, // green-500
+                        },
+                        'shake-red': {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '25%': { transform: 'translateX(-5px)' },
+                            '75%': { transform: 'translateX(5px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Styles -->
+    <style>
+        /* Inter font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Add a custom animation class */
+        .animate-pulse-green {
+            animation: pulse-green 0.5s;
+        }
+    </style>
 </head>
-<body>
-    <header> <!--Header section at the top of the page-->
-        <nav> <!--Short for navigation-->
-            <ul> <!--Short for Unordered List-->
-                <li><a href = "#WhoAmI?" class = "nav-link">Who Am I?</a></li>
-                <li><a href = "#Projects" class = "nav-link">Projects</a></li>
-                <li><a href = "#Resume" class = "nav-link">Resume</a></li>
-                <li><a href = "#Contact" class = "nav-link">Contact</a></li>
-                <li><a href = "/Src/Sub Page/AreYouBored.html">?</a></li>
-                <li><a href="https://github.com/keagankozlowski" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="https://linkedin.com/in/keagankozlowski" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="#" id="DarkLight"><i class="fas fa-adjust"></i></a></li>
-            </ul>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
+        <nav class="max-w-5xl mx-auto flex justify-between items-center p-4">
+            <!-- Logo/Name -->
+            <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-500">
+                Keagan Kozlowski
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#who-am-i" class="nav-link font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Who Am I?</a>
+                <a href="#projects" class="nav-link font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Projects</a>
+                <a href="#contact" class="nav-link font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">Contact</a>
+                
+                <!-- Social & Utility Icons -->
+                <div class="flex items-center space-x-4 pl-4 border-l border-gray-300 dark:border-gray-700">
+                    <a href="https://github.com/keagankozlowski" target="_blank" aria-label="GitHub" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/keagankozlowski" target="_blank" aria-label="LinkedIn" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">
+                        <i class="fas fa-adjust fa-lg"></i>
+                    </button>
+                    <button id="easter-egg-toggle" aria-label="Easter Egg" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-500 transition-colors">
+                        <i class="fas fa-question fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Button (can be implemented later) -->
+            <div class="md:hidden">
+                <button class="text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
         </nav>
     </header>
 
-    <main> <!--Main section in the middle of the page-->
-        <div id = "WhoAmI?" class = "content-section active">
-           <h2>Who Am I?</h2>
-           <p>Content temporary</p> 
-        </div>
-        <div id = "Projects" class = "content-section">
-            <h2>Projects</h2>
-            <p>Content temporary</p> 
-         </div>
-         <div id = "Resume" class = "content-section">
-            <h2>Resume</h2>
-            <div class = "pdf-container">
-                <iframe src="../../Assets/CvAndCoverLetter/Keagan_Kozlowski_CV___2-3.pdf" width="100%" height="600px"></iframe>
-            </div> 
-         </div>
-         <div id = "Contact" class = "content-section">
-            <h2>Contact</h2>
-            <p>Content temporary</p> 
-         </div>
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto p-4 sm:p-8 mt-10">
+
+        <!-- Section: Who Am I? -->
+        <section id="who-am-i" class="mb-24 min-h-[60vh] flex flex-col justify-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Hi, I'm Keagan.</h1>
+            <h2 class="text-3xl md:text-4xl font-semibold text-blue-600 dark:text-blue-500 mb-8">A Software Developer & CS Student.</h2>
+            <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl leading-relaxed">
+                I'm passionate about building cool things for the web, from interactive front-end experiences to robust back-end systems. 
+                I'm currently on placement, honing my skills in DevOps and Backend development.
+                Welcome to my little corner of the internet.
+            </p>
+        </section>
+
+        <!-- Section: Projects -->
+        <section id="projects" class="mb-24">
+            <h2 class="text-4xl font-bold mb-8 border-b-4 border-blue-500 pb-2 inline-block">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3">Portfolio Website</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            The very site you're on right now! Refactored from a multi-page site into a clean,
+                            single-page application using Tailwind CSS and JavaScript for a professional look.
+                        </p>
+                        <div class="flex space-x-4">
+                            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                            <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-3">[Your Project Name]</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            A brief, 2-3 sentence description of another project you've worked on. 
+                            What was the tech? What was the goal?
+                        </p>
+                        <div class="flex space-x-4">
+                            <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">[Tech]</span>
+                            <span class="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">[Tech]</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="contact" class="mb-24 text-center">
+            <h2 class="text-4xl font-bold mb-8 border-b-4 border-blue-500 pb-2 inline-block">Get In Touch</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+                I'm always open to new opportunities and collaborations. 
+                Whether you have a question or just want to say hi, feel free to reach out.
+            </p>
+            <!-- Anti-Scraping Email: This will be populated by JavaScript -->
+            <span id="email-placeholder" class="text-xl font-semibold text-blue-600 dark:text-blue-500">
+                <!-- loading email... -->
+            </span>
+        </section>
+
     </main>
 
-    <footer> <!--Footer section at the bottom of the page-->
-        <p>&copy; 2025 Keagan Kozlowski</p>
+    <!-- Footer -->
+    <footer class="text-center p-8 border-t border-gray-200 dark:border-gray-800 mt-16">
+        <p class="text-gray-600 dark:text-gray-400">&copy; <span id="copyright-year"></span> Keagan Kozlowski. All rights reserved.</p>
     </footer>
-    
+
+
+    <!-- Easter Egg Modal -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/70 z-50 flex justify-center items-center p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div id="modal-content" class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-md transform scale-95 transition-transform duration-300">
+            
+            <!-- Initial Question -->
+            <div id="modal-question" class="p-8 text-center">
+                <h3 class="text-3xl font-bold mb-4">Are you bored?</h3>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">If not, why are you here?</p>
+                <div class="flex justify-center space-x-4">
+                    <button id="modal-no" class="px-6 py-3 rounded-lg font-semibold bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-times mr-2"></i> No
+                    </button>
+                    <button id="modal-yes" class="px-6 py-3 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-check mr-2"></i> Yes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Clicker Game (Initially Hidden) -->
+            <div id="game-container" class="hidden p-8 text-center">
+                <h3 class="text-3xl font-bold mb-8">Clicker Game!</h3>
+                
+                <!-- Currency Display -->
+                <div class="mb-8">
+                    <div id="game-currency-display" class="inline-flex items-baseline justify-center bg-gray-100 dark:bg-gray-700 rounded-lg px-6 py-3">
+                        <span id="game-currency-amount" class="text-5xl font-extrabold">0</span>
+                        <span id="game-currency-name" class="text-lg ml-2 text-gray-600 dark:text-gray-400">coins</span>
+                    </div>
+                </div>
+
+                <!-- Game Button -->
+                <button id="game-button" class="w-full px-8 py-4 rounded-lg font-semibold text-xl bg-green-600 text-white hover:bg-green-700 active:transform active:scale-95 transition-all">
+                    Click Me! (+1)
+                </button>
+
+                <button id="game-close" class="mt-6 text-sm text-gray-500 hover:underline">
+                    I'm bored of this game.
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main JavaScript -->
+    <!-- REMOVED the large inline <script> block -->
+
+    <!-- Load JavaScript files -->
+    <!-- 'defer' ensures they run after the HTML is parsed, in order -->
+    <script src="theme.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="game.js" defer></script>
 </body>
 </html>
+
