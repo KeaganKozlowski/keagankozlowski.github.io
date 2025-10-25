@@ -9,3 +9,6 @@ My current plan for the website is to:
 
 ## Broken
 I have currently broken my whole website due to an error in my yaml file.
+
+## Update
+I am currently in the process in overhauling my website, sorry if anything doesn't work or goes down.
