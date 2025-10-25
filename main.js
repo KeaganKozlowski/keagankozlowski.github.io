@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // --- 3. Anti-Scraping Email ---
-    const emailUser = 'hello';
-    const emailDomain = 'keagankozlowski.dev'; // (Assuming a domain)
+    const emailUser = 'keagan';
+    const emailDomain = 'koz.ski'; // (Assuming a domain)
     const emailPlaceholder = document.getElementById('email-placeholder');
     if (emailPlaceholder) {
         const emailAddress = `${emailUser}@${emailDomain}`;
